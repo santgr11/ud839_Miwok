@@ -19,14 +19,24 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
         //Create array of words containing every number from 1 to 10
-        ArrayList<String> words = new ArrayList<String>();
-        Collections.addAll(words, "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten");
+        ArrayList<Word> words = new ArrayList<Word>();
+        Collections.addAll(words,
+                new Word("one", "lutti"),
+                new Word("two", "otiiko"),
+                new Word("three", "tolookosu"),
+                new Word("four", "oyyisa"),
+                new Word("five", "massokka"),
+                new Word("six", "temmokka"),
+                new Word("seven", "kenekaku"),
+                new Word("eight", "kawinta"),
+                new Word("nine", "wo'e"),
+                new Word("ten", "na'aacha"));
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, R.layout.list_item, words);
+        WordAdapter adapter = new WordAdapter(this, words);
 
         ListView listView = (ListView) findViewById(R.id.list);
 
-        listView.setAdapter(itemsAdapter);
+        listView.setAdapter(adapter);
 
     }
 }
