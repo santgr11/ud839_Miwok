@@ -19,7 +19,8 @@
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:layout_gravity="center_vertical"
-        android:background="@color/category_numbers">
+        android:background="@color/category_numbers"
+        android:id="@+id/text_layout">
 
         <TextView
             android:id="@+id/miwok_text_view"
