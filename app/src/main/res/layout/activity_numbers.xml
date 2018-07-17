@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NumbersActivity">
+    tools:context=".NumbersActivity"
+    android:id="@+id/rootView"
+    android:orientation="vertical">
 
 </LinearLayout>
