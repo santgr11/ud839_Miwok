@@ -45,11 +45,17 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // set this text on the number TextView
         defaultTextView.setText(numberWord.getDefaultTranslation());
 
+
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.word_icon);
+
         // Get the image resource ID from the current AndroidFlavor object and
-        // set the image to iconView
-        iconView.setImageResource(numberWord.getImageResourceId());
+        // set the image to iconView if it contains one else hide the text view
+        if(numberWord.hasImage()) {
+            iconView.setImageResource(numberWord.getImageResourceId());
+        } else {
+            iconView.setVisibility(View.GONE);
+        }
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
